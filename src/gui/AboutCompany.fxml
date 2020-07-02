@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="407.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="About the company Parallel Universe">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" left="15.0" top="10.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="17.0" prefWidth="403.0" text="    Google LLC (English pronunciation: [ˈguːgɫ̩]) is  a United " />
+      <Label prefHeight="17.0" prefWidth="398.0" text="States multinational software and online services company.">
+         <padding>
+            <Insets left="4.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="15.0" prefWidth="398.0" text="Google hosts and develops a range of internet-based ">
+         <padding>
+            <Insets left="4.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="15.0" prefWidth="402.0" text="products and services and generates profit primarily">
+         <padding>
+            <Insets left="4.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="15.0" prefWidth="430.0" text="through advertising through AdWords. Google is ">
+         <padding>
+            <Insets left="4.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="15.0" prefWidth="526.0" text="the main subsidiary of Alphabet Inc. ">
+         <padding>
+            <Insets left="4.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="15.0" prefWidth="424.0" text="    The company was founded by Larry Page and Sergey Brin, " />
+      <Label prefHeight="15.0" prefWidth="476.0" text="often nicknamed &quot;Google Guys&quot;, [12] [13] [14] while the ">
+         <padding>
+            <Insets left="4.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="15.0" prefWidth="399.0" text="two were attending Stanford University as doctoral ">
+         <padding>
+            <Insets left="4.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="15.0" prefWidth="420.0" text="students. It was founded as a private company on ">
+         <padding>
+            <Insets left="4.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="15.0" prefWidth="443.0" text="September 4, 1998 and its initial public offering was">
+         <padding>
+            <Insets left="4.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="15.0" prefWidth="444.0" text="carried out on August 19, 2004. ">
+         <padding>
+            <Insets left="4.0" />
+         </padding>
+      </Label>
+   </children>
+</VBox>
