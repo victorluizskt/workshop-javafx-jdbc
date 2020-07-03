@@ -4,6 +4,9 @@ import javafx.scene.control.TextField;
 
 public class Constraints {
 
+    /*
+    Class for restricting values ​​and usage in application fields.
+     */
     public static void setTextFieldInteger(TextField txt) {
         txt.textProperty().addListener((obs, oldValue, newValue) -> {
             if (newValue != null && !newValue.matches("\\d*")) {

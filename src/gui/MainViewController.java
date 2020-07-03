@@ -8,20 +8,24 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Menu;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
+import model.entities.Department;
+import modell.services.DepartmentService;
+import modell.services.ProductsService;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 
 public class MainViewController implements Initializable {
+
+    @FXML
+    private Button button;
 
     @FXML
     private MenuItem menuItemSeller;
@@ -41,34 +45,42 @@ public class MainViewController implements Initializable {
     @FXML
     private MenuItem menuItemContact;
 
+
     @FXML
-    public void onMenuItemSellerAction(){
+    public void onMenuItemSellerAction() {
         System.out.println("onMenuItemSellerAction");
     }
 
     @FXML
-    public void onMenuItemDepartmentAction(){
-        loadView("/gui/DepartmentList.fxml");
+    public void onMenuItemDepartmentAction() {
+        loadView("/gui/DepartmentList.fxml", (DepartmentListController controller) ->{
+            controller.setDepartmentService(new DepartmentService());
+            controller.updateTableView();
+        });
     }
 
     @FXML
-    public void onMenuItemAboutAction(){
-        loadView("/gui/About.fxml");
+    public void onMenuItemAboutAction() {
+        loadView("/gui/About.fxml", x -> {});
     }
 
     @FXML
-    public void onMenuItemAboutProductsAction(){
-        loadView("/gui/ProductsList.fxml");
+    public void onMenuItemAboutProductsAction() {
+        loadView("/gui/ProductsList.fxml", (ProductsListController controller) -> {
+            controller.setProductsService(new ProductsService());
+            controller.updateTableView();
+        });
+    }
+
+
+    @FXML
+    public void menuItemAboutTheCompanyAction() {
+        loadView("/gui/AboutCompany.fxml", x -> {});
     }
 
     @FXML
-    public void menuItemAboutTheCompanyAction(){
-        loadView("/gui/AboutCompany.fxml");
-    }
-
-    @FXML
-    public void menuItemContactAction(){
-        System.out.println("menuItemContact");
+    public void menuItemContactAction() {
+        loadView("/gui/Contacts.fxml", x -> {});
     }
 
     @Override
@@ -76,7 +88,11 @@ public class MainViewController implements Initializable {
 
     }
 
-    private synchronized void loadView(String absoluteName){
+    /*
+    This function has the final reason to load other windows from the main window,
+    we use VBox as new windows and not Scene or Pane
+     */
+    private synchronized <T> void loadView(String absoluteName, Consumer<T> initializingAction) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             VBox newVBox = loader.load();
@@ -89,11 +105,10 @@ public class MainViewController implements Initializable {
             mainVBox.getChildren().add(mainMenu);
             mainVBox.getChildren().addAll(newVBox.getChildren());
 
-        } catch (IOException e){
+            T controller = loader.getController();
+            initializingAction.accept(controller);
+        } catch (IOException e) {
             Alerts.showAlerts("IOException", "Error loader view", e.getMessage(), Alert.AlertType.ERROR);
         }
     }
-
-
-
 }
