@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="518.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SellerListController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SellerListController">
    <children>
       <Label text="Seller Registration">
          <font>
@@ -24,10 +24,13 @@
       </ToolBar>
       <TableView fx:id="tableViewSeller" prefHeight="209.0" prefWidth="576.0">
         <columns>
-          <TableColumn fx:id="tableColumnId" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="tableColumnName" prefWidth="127.0" text="Name" />
-            <TableColumn fx:id="tableColumnEDIT" prefWidth="85.0" />
-            <TableColumn fx:id="tableColumnREMOVE" prefWidth="94.0" />
+          <TableColumn fx:id="tableColumnId" prefWidth="39.0" text="Id" />
+          <TableColumn fx:id="tableColumnName" prefWidth="145.0" text="Name" />
+            <TableColumn fx:id="tableColumnEmail" prefWidth="141.0" text="Email" />
+            <TableColumn fx:id="tableColumnBirthDate" prefWidth="88.0" text="Birth Date" />
+            <TableColumn fx:id="tableColumnBaseSalary" prefWidth="105.0" text="Base Salary" />
+            <TableColumn fx:id="tableColumnEDIT" minWidth="0.0" prefWidth="56.0" />
+            <TableColumn fx:id="tableColumnREMOVE" prefWidth="39.0" />
         </columns>
       </TableView>
    </children>
