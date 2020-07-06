@@ -68,9 +68,6 @@ public class SellerListController implements Initializable, DataChangeListener {
         createDialogForm(obj,"/gui/SellerForm.fxml", parentStage);
     }
 
-    private void createDialogForm(Seller obj, String s, Stage parentStage) {
-    }
-
     public void setSellerService(SellerService service){
         this.service = service;
     }
@@ -110,7 +107,6 @@ public class SellerListController implements Initializable, DataChangeListener {
 
     // New Seller creation window
 
-    /*
     private void createDialogForm(Seller obj, String absoluteName, Stage parentStage){
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
@@ -131,8 +127,6 @@ public class SellerListController implements Initializable, DataChangeListener {
             Alerts.showAlerts("IO Exception", "Error loading view", e.getMessage(), Alert.AlertType.ERROR);
         }
     }
-
-     */
 
     @Override
     public void onDataChanged() {
